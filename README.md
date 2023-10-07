@@ -60,8 +60,8 @@ or via `JDK_HOME\conf\security\java.security` file:
 jdk.security.provider.preferred=AES/GCM/NoPadding:BC
 ```
 
-Second approach is more stable, as setting property not always help because Security providers could be configured on some ealier stage then the property is set, and it is read only once.
+Second approach is more stable, as setting property not always help because Security providers could be configured on some earlier stage than the property is set, and it is read only once.
 
-# Important - Java 21 JCE performs BETTER then BouncyCastle 1.70
+# Important - Java 21 JCE performs BETTER than BouncyCastle 1.70
 
 See time measurement on different sizes of random bytes on different java versions here: [SunJCE vs BC performance](https://github.com/dladlk/sunjce-vs-bc-performance/blob/main/README.md)
