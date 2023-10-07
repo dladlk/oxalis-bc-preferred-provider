@@ -58,4 +58,13 @@
 		
 	</dependencies>
 
+	<distributionManagement>
+		<repository>
+			<id>github_dladlk</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/dladlk/oxalis-bc-preferred-provider</url>
+		</repository>
+	</distributionManagement>
+
+
 </project>
