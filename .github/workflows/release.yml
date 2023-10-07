@@ -4,7 +4,7 @@ on:
     types: [created]
 
 jobs:
-  build-and-push-image:
+  publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -20,11 +20,12 @@ jobs:
           distribution: 'temurin'
           java-version: '8'
           cache: 'maven'
+          server-id: github_dladlk # Value of the distributionManagement/repository/id field of the pom.xml
 
       - name: Build mvn
-        run: mvn --batch-mode install -DskipTests=true
+        run: mvn --batch-mode package -DskipTests=true
 
       - name: Publish to GitHub Packages
         run: mvn --batch-mode deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
